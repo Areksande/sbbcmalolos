@@ -296,3 +296,105 @@ body {
 .footer-info h3 {
   margin-bottom: 10px;
 }
+
+/* =========================
+   RESPONSIVE STYLES
+========================= */
+
+/* Tablets (≤ 1024px) */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .history,
+  .footer {
+    gap: 20px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar a {
+    margin: 10px 10px 0 0;
+  }
+
+  /* HERO */
+  .hero {
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  /* HISTORY */
+  .history {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .history-image {
+    width: 100%;
+  }
+
+  /* MANUALS */
+  .manuals {
+    padding: 40px 20px;
+  }
+
+  .manual-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  /* SCHEDULE */
+  .schedule {
+    padding: 40px 20px;
+  }
+
+  /* FOOTER */
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-image {
+    width: 100%;
+    max-width: 320px;
+    height: 180px;
+  }
+}
+
+/* Small phones (≤ 480px) */
+@media (max-width: 480px) {
+
+  .hero h1 {
+    font-size: 22px;
+  }
+
+  .card {
+    padding: 18px;
+    font-size: 14px;
+  }
+
+  .navbar .logo {
+    font-size: 18px;
+  }
+}
+
