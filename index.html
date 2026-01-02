@@ -45,10 +45,8 @@
     <p class="subtitle">You can read this in PDF form</p>
 
     <div class="manual-grid">
-      <div class="card" onclick="window.open(
-       'https://heyzine.com/flip-book/4d10b3acf6.html',
-       '_blank'
-     )">Paglago</div>
+      <iframe id="frame" src="PAGLAGO.pdf" frameborder="0"></iframe>
+      <div class="card" onclick="window.open(document.getElementById('frame').src, 'blank')">Paglago</div>
       <div class="card">Manual of Ministry</div>
       <div class="card">Hosting Form</div>
       <div class="card">Preachings</div>
@@ -85,5 +83,6 @@
 
 </body>
 </html>
+
 
 
