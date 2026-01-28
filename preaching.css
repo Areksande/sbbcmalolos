@@ -99,6 +99,17 @@
    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
  }
 
+ .oath1 {
+   color: rgb(0, 0, 0);
+   padding: 1.5rem;
+   border-radius: 8px;
+   margin-bottom: 2rem;
+   font-weight: bolder;
+   font-size: 1.2rem;
+   text-align: justify;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ }
+
  #proverbs23 {
    background: linear-gradient(135deg, #71f6ff 0%, #005157 100%);
    color: white;
