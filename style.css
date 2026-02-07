@@ -1,7 +1,10 @@
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -86,7 +89,34 @@ body {
   font-size: 5rem;
   margin-bottom: 1rem;
   font-weight: 700;
+  overflow: hidden;              /* required for typing effect */
+  white-space: nowrap;           /* prevent wrapping */
+    /* cursor */
+  
+  /* two animations separated by comma */
+  animation: typing 5s steps(18) infinite, blink 0.9s step-end infinite;
 }
+
+/* Typing effect */
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 1200px; /* adjust based on your text length */
+  }
+  100% {
+    width: 0;
+  }
+}
+
+/* Cursor blink */
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
 
 .hero p {
   font-size: 1.5rem;
@@ -219,31 +249,26 @@ body {
   background: linear-gradient(135deg, #66d6ea 0%, #007e7e 100%);
   color: white;
 }
-
 /* SCHEDULE */
 .schedule {
   padding: 4rem 5%;
   background-color: #fff;
 }
-
 .schedule h2 {
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 3rem;
   color: #2c3e50;
 }
-
 .event-container {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .manual-grid1 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
-
 .event-card {
   background: white;
   padding: 2rem;
@@ -263,6 +288,257 @@ body {
   margin-bottom: 0.8rem;
   padding-left: 0.5rem;
 }
+
+/* notes design */
+header.po {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  padding: 1rem 5%;
+    padding: 20px 30px;
+    color: #000000;
+}
+
+header.po h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+/* Edit & Delete buttons */
+.edit-btn,
+.delete-btn {
+    background-color: #014b41;  /* button background */
+    border: none;
+    border-radius: 8px;
+    padding: 8px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+/* Hover effect */
+.edit-btn:hover,
+.delete-btn:hover {
+    background-color: #00a782;
+    transform: scale(1.1);
+}
+
+/* Material Symbols icon inside buttons */
+.edit-btn .material-symbols-outlined,
+.delete-btn .material-symbols-outlined {
+    font-size: 1.2rem;  /* adjust size as needed */
+    color: #fff;        /* make the icon white */
+}
+
+.add-note-btn {
+    background: #007e7e;
+    color: #ffffff;
+    border: none;
+    display: flex;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-left: auto; 
+}
+
+.add-note-btn:hover {
+    background: #ecebff;
+    transform: translateY(-2px);
+}
+
+/* Notes grid */
+.notes-grid {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+
+/* Individual note (for JS later) */
+.note-card {
+    background: #fff;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* NEW PROPERTIES */
+    word-wrap: break-word; /* Wrap long words */
+    overflow-wrap: break-word; /* Modern standard */
+    word-break: break-word;
+}
+
+.note-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+.note-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #6a5acd;
+}
+
+.note-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Dialog */
+dialog {
+    border: none;
+    border-radius: 14px;
+    padding: 0;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.45);
+}
+
+/* Dialog content */
+.dialog-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 14px;
+}
+
+/* Dialog header */
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.dialog-title {
+    font-size: 1.3rem;
+    color: #6a5acd;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #888;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+/* Form */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #6a5acd;
+    box-shadow: 0 0 0 3px rgba(106, 90, 205, 0.15);
+}
+
+/* Dialog actions */
+.dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cancel-btn {
+    background: #e0e0e0;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.cancel-btn:hover {
+    background: #cfcfcf;
+}
+
+.save-btn {
+    background: #6a5acd;
+    color: #fff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.save-btn:hover {
+    background: #5a4bbf;
+    transform: translateY(-1px);
+}
+
+
+.dark-theme{
+  background-color: #0f1c29;
+  color: rgb(0, 0, 0);
+}
+
+.theme-toggle-btn {
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #00494e;
+  padding: 10px 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #f0f0f0; /* default background */
+}
+
+/* Temporary click effect (optional) */
+.theme-toggle-btn:active {
+  transform: scale(0.95);
+}
+
+/* Active / clicked state */
+.theme-toggle-btn.active {
+  background-color: black;   /* background stays black */
+  color: white;              /* text/icon color changes */
+}
+
+
+
 
 /* FOOTER */
 .footer {
